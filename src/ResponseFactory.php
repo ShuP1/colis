@@ -11,4 +11,10 @@ class ResponseFactory implements ResponseFactoryInterface
     {
         return new Response($code);
     }
+
+    /** Non-PSR */
+    public function createFullResponse($code, StreamInterface $body, Headers $headers, string $version)
+    {
+        return new Response($code, $body, $headers, $version);
+    }
 }

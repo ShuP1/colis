@@ -115,4 +115,10 @@ class Message implements MessageInterface
     {
         return clone $this->headers;
     }
+
+    /** Non-PSR */
+    public function write($data)
+    {
+        $this->body->write($data);
+    }
 }

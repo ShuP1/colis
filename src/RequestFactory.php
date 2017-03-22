@@ -14,4 +14,10 @@ class RequestFactory implements RequestFactoryInterface
         }
         return new Request($method, $uri);
     }
+
+    /** Non-PSR */
+    public function createFullRequest(string $method, UriInterface $uri, StreamInterface $body, Headers $headers, string $version)
+    {
+        return new Request($method, $uri, $body, $headers, $version);
+    }
 }
