@@ -111,12 +111,6 @@ class Message implements MessageInterface
     }
 
     /** Non-PSR */
-    public function getHeaderObject()
-    {
-        return clone $this->headers;
-    }
-
-    /** Non-PSR */
     public function write($data)
     {
         $this->body->write($data);
